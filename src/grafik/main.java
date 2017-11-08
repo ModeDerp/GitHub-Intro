@@ -58,8 +58,8 @@ public class main extends Application {
 		 * 		 Eller är det kanske bara för många rutor??....
 		 */
 
-		int rows = 30;
-		int cols = 30;
+		int rows = 10;
+		int cols = 10;
 
 		double width = WIDTH / cols;
 		double height = HEIGHT / rows;
