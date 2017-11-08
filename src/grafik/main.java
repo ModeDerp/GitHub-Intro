@@ -44,7 +44,7 @@ public class main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 		// Ändra siffran här nere till 1,2,3 eller 4 beroende på vilken vy du vill se!
-		makeView4();
+		makeView3();
 
 		primaryStage.setScene(new Scene(root, WIDTH, HEIGHT));
 		primaryStage.show();
@@ -99,7 +99,26 @@ public class main extends Application {
 		 * 		 TIPS: Börja i mitten och gå snett uppåt.
 		 */
 		
-		
+		int rings = 120;
+
+		for (int i = rings; i >= 0; i--) {
+
+			double radius = WIDTH / rings / 2;
+
+			Circle circ = new Circle(i * radius);
+			
+			circ.setTranslateX(i * radius);
+			circ.setTranslateY(i * radius);
+
+
+			int r = (int) (Math.random() * 255);
+			int g = (int) (Math.random() * 255);
+			int b = (int) (Math.random() * 255);
+			circ.setFill(Color.rgb(r, g, b));
+
+			root.getChildren().add(circ);
+
+		}		
 	}
 
 	private void makeView3() {
@@ -110,23 +129,26 @@ public class main extends Application {
 		 * 		 Sedan måste mellanrummet mellan ringarna minska också...
 		 */
 
-		int rings = 15;
+		int rings = 120;
 
 		for (int i = rings; i >= 0; i--) {
 
 			double radius = WIDTH / rings / 2;
 
-			Circle cir = new Circle(i * radius);
+			Circle circ = new Circle(i * radius);
+			
+			circ.setTranslateX(i * radius);
+			circ.setTranslateY(i * radius);
+
 
 			int r = (int) (Math.random() * 255);
 			int g = (int) (Math.random() * 255);
 			int b = (int) (Math.random() * 255);
-			cir.setFill(Color.rgb(r, g, b));
+			circ.setFill(Color.rgb(r, g, b));
 
-			root.getChildren().add(cir);
+			root.getChildren().add(circ);
 
 		}
-
 	}
 
 	private void makeView4() {
@@ -160,6 +182,7 @@ public class main extends Application {
 				int g = (int) (Math.random() * 255);
 				int b = (int) (Math.random() * 255);
 				circ.setFill(Color.rgb(r, g, b));
+				
 
 				// Lägg till rect så den syns i fönstret
 				root.getChildren().add(circ);
