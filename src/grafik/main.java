@@ -139,30 +139,30 @@ public class main extends Application {
 		int rows = 10;
 		int cols = 10;
 
-		double width = WIDTH / cols;
-		double height = HEIGHT / rows;
+		
+		double radius = WIDTH / cols / 2;
 
 		for (int row = 0; row < rows; row++) {
 
 			for (int col = 0; col < cols; col++) {
 
 				// Skapa en ny Rectangle
-				Rectangle rect = new Rectangle(width, height);
+				Circle circ = new Circle(radius);
 
 				// Flytta rect i x-led så den kommer rätt
-				rect.setTranslateX(col * width);
+				circ.setTranslateX((col * radius * 2) + radius);
 
 				// Flytta rect i y-led så den kommer rätt
-				rect.setTranslateY(row * height);
+				circ.setTranslateY((row * radius * 2) + radius);
 
 				// Färglägg med en random färg
 				int r = (int) (Math.random() * 255);
 				int g = (int) (Math.random() * 255);
 				int b = (int) (Math.random() * 255);
-				rect.setFill(Color.rgb(r, g, b));
+				circ.setFill(Color.rgb(r, g, b));
 
 				// Lägg till rect så den syns i fönstret
-				root.getChildren().add(rect);
+				root.getChildren().add(circ);
 			}
 		}
 
