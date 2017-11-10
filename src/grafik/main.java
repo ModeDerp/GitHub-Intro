@@ -137,8 +137,8 @@ public class main extends Application {
 
 			Circle circ = new Circle(i * radius);
 			
-			circ.setTranslateX(i * radius);
-			circ.setTranslateY(i * radius);
+			circ.setTranslateX(WIDTH/2);
+			circ.setTranslateY(HEIGHT/2);
 
 
 			int r = (int) (Math.random() * 255);
